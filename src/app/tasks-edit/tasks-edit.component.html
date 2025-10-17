@@ -1,0 +1,27 @@
+<form>
+  <div class="mb-3" hidden>
+    <label for="taskId" class="form-label">ID</label>
+    <input type="number" class="form-control" id="taskId" [(ngModel)]="taskToEdit.id" name="taskId" readonly>
+  </div>
+
+  <div class="mb-3">
+    <label for="taskName" class="form-label">Tâche</label>
+    <input type="text" class="form-control" id="taskName" [(ngModel)]="taskToEdit.taskName" name="taskName">
+  </div>
+
+  <div class="mb-3">
+    <label for="taskStatus" class="form-label">Statut</label>
+    <select class="form-select" id="taskStatus" [(ngModel)]="taskToEdit.taskStatus" name="taskStatus">
+      <option value="Pending">Pending</option>
+      <option value="Done">Done</option>
+    </select>
+  </div>
+  
+
+  <button type="button" class="btn btn-primary" (click)="editTask()">
+    Valider
+  </button> &nbsp;
+  <button type="button" class="btn btn-danger" (click)="cancelEdit()">
+    Annuler
+  </button>
+</form>
